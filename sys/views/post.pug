@@ -1,0 +1,41 @@
+extends ../template/master.pug
+
+block content
+        section.hero.is-primary.is-bold
+                .hero-body
+                        if hasIncorrect || hasUnauthorized
+                                .notification.is-danger
+                                        | #{hasIncorrect || hasUnauthorized}
+                        .columns
+                                .column
+                                        h1.title.is-1 <strong>Fo-Room</strong>
+                                        h3.subtitle <font size = '3'>A Forum based webpage<font>
+        section.hero.is-primary.is-bold.is-fullheight
+                form(method="POST" action="/post")
+                        .field
+                                .label 
+                                        h1.title
+                        .field
+                                .label <font size="6" color="white"> Posts </font>
+                                ul      
+                                        each post in posts
+                                                .box
+                                                        <font color="black">
+                                                                <font size="5">
+                                                                li=`${post.title}`
+                                                                </font>
+                                                                hr
+                                                                li=`CATEGORY : ${post.category_name}`
+                                                                li=`TITLE : ${post.author}`
+                                                                li=`CONTENT : ${post.content}`
+                                                                hr
+                                                                li=`Date posted [${post.pdate}]` 
+                                                                </font>          
+
+                        .field
+                                .control
+                                <center>
+                                .button.is-dark.is-inverted.is-medium(value='new' href='/new') <left>Add</font>      
+                                .button.is-dark.is-inverted.is-medium(value='new2' href='/new2') Delete
+                                .button.is-dark.is-inverted.is-medium(value='new3' href='/new3') Edit                            
+

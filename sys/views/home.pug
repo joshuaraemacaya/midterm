@@ -1,0 +1,63 @@
+extends ../template/master.pug
+
+block content
+        section.hero.is-primary.is-bold
+                .hero-body
+                        if hasIncorrect || hasUnauthorized
+                                .notification.is-danger
+                                        | #{hasIncorrect || hasUnauthorized}
+                        h1.title.is-1 <strong>Fo-Room</strong>
+                        h3.subtitle <font size = '3'>A Forum based webpage<font>
+        .block                        
+                section.hero.is-light.is-fullheight
+                        .container.is-fluid    
+                                .columns
+                                        .column   
+                                                .field.has-text-centered    
+                                                        br         
+                                                        h1.title <strong><font size="5">Category </font></strong>
+                                                                .center      
+                                                                        ul
+                                                                                br
+                                                                                each category in categories
+                                                                                        li
+                                                                                                h1.subtitle=`${category.name}`                                    
+                                        .column
+                                                br
+                                                br
+                                                .box
+                                                        .media
+                                                        form(method="POST" action="/home1")
+                                                                        <center>
+                                                                        h1.title <strong><font size="4">Add Category</font></strong>
+                                                                        input.input.is-primary(type="text" name="category1" placeholder="Add Category")
+                                                                        br
+                                                                        br
+                                                                        input.button.is-primary(type='submit' value='Add')                                                       
+                                                        form(method="POST" action="/home2")
+                                                                        <center>
+                                                                        hr
+                                                                        h1.title <strong><font size="4">View Category</font></strong>
+                                                                        input.input.is-primary(type="text" name="category2" placeholder="View Category")
+                                                                        br
+                                                                        br
+                                                                        input.button.is-primary(type='submit' value='View')
+                                                                        hr
+                                                        form(method="POST" action="/home3")
+                                                                        <center>
+                                                                        h1.title <strong><font size="4">Edit Category</font></strong>
+                                                                        input.input.is-primary(type="text" name="category3" placeholder="Title to Edit")
+                                                                        br
+                                                                        br
+                                                                        h1.title <strong><font size="4">To What?</font></strong>
+                                                                        input.input.is-primary(type="text" name="categoryedit" placeholder="Desired Title")
+                                                                        br
+                                                                        br
+                                                                        input.button.is-primary(type='submit' value='Edit')
+                                                .sector
+                                                
+                .sector
+                        .block
+                                center
+                                        footer  
+                                                p Why? We're young, yet tortured; young yet stressed-out. We ought to enjoy life, but nah, nevermind.

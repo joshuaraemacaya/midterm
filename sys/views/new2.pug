@@ -1,0 +1,52 @@
+extends ../template/master.pug
+
+block content
+        form(method="POST" action="/new2")     
+                section.hero.is-primary.is-bold
+                        .hero-body                              
+                                .columns
+                                        .column.is-9
+                                                h1.title.is-1 <strong>Fo-Room</strong>
+                                                h3.subtitle <font size = '3'>A Forum based webpage<font> 
+              
+                .field
+                        .field-label.is-normal
+                                label.label <center><font size='5'>Post</font>
+                                
+                        .field-body
+                                each user in users
+                                        li=`${user.email}` 
+                
+
+                br
+                br
+                br
+                br
+                br
+                br
+        .container.is-fluid        
+                .field.is-horizontal
+                        .field-label.is-normal
+                                label.label Title
+                        .field-body
+                                .field
+                                        p.control.is-expanded
+                                                input.input.is-primary(type="text" placeholder="Title" name='title')
+                .block
+                        .field-label.is-normal
+                        .field-body
+                                //- .field
+                                        //- p.control.is-expanded
+                                                
+                                        //-         center
+                                        //-                 input.button.is-primary.is-outlined.is-medium(type="submit" value="Add")
+                                        //-                 .button.is-primary.is-outlined(href=('/home')) <<
+                .block
+                                
+                        column
+                                .field
+                                        center
+                                                a.button.is-primary(href='/post') <<
+                                                |
+                                                |
+                                                input(type='submit' value='Delete')

@@ -1,0 +1,23 @@
+extends ./base
+
+block body
+    nav.navbar
+        div.navbar-brand
+            a.navbar-item(href="/home") FORUM
+        
+        div.navbar-menu
+            div.navbar-start
+                div.navbar-item.has-dropdown.is-hoverable
+                    a.navbar-link(href="/admin") Admin
+                    div.navbar-dropdown.is-right
+                        a.navbar-item(href="/admin/users") Users
+
+            div.navbar-end
+                div.navbar-item.has-dropdown.is-hoverable
+                    a.navbar-link: span.icon: i.fa.fa-user
+                    div.navbar-dropdown.is-right
+                        
+                        a.navbar-item(href="/logout") Log-out
+        
+    div.container
+    block content

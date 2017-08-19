@@ -1,0 +1,107 @@
+extends ../template/base
+
+
+
+
+block body
+
+
+    section.hero.is-primary.is-bold
+        .hero-body
+            if hasIncorrect || hasUnauthorized
+                .notification.is-danger
+                    | #{hasIncorrect || hasUnauthorized}
+            .columns
+                .column.is-9
+                    h1.title.is-1 <strong>Fo-Room</strong>
+                    h3.subtitle <font size = '3'>A Forum based webpage<font>
+                   
+
+    .block
+        .section <center>  
+            .container.is-widescreen.center    
+                .tile.is-7
+                    .tile.is-parent.is-vertical        
+                        center
+                            h1.title Sign Up
+                            br
+                            
+                        form(method="POST" action="/signup")
+                          
+                            .field.is-horizontal
+                                .field-label.is-normal
+                                    label.label Name
+                                .field-body
+                                    .field
+                                        p.control.is-expanded
+                                            input.input.is-primary(type="text" placeholder="Name" name="username")
+            
+                            .field.is-horizontal
+                                .field-label.is-normal
+                                    label.label E-mail
+                                .field-body
+                                    .field
+                                        p.control.is-expanded
+                                            input.input.is-primary(type="email" name="email" placeholder="Email")
+                            
+
+                            .field.is-horizontal
+                                .field-label.is-normal
+                                    label.label Password
+                                .field-body
+                                    .field
+                                        p.control.is-expanded
+                                            input.input.is-primary(type="password" name="password" placeholder="Password")                
+                                        
+                            .field.is-horizontal
+                                .field-label.is-normal
+                                    label.label Re-enter Password
+                                .field-body
+                                    .field
+                                        p.control.is-expanded
+                                            input.input.is-primary(type="r-password" name="r-password" placeholder="Re-enter Password")
+
+                            .field.is-horizontal
+                                .field-label.is-normal
+                                    label.label User Type
+                                .field-body
+                                    .field
+                                        p.control
+                                            input.radio(type="radio" name="type" value="admin")
+                                            label Admin
+                                        
+                                    .field
+                                        p.control
+                                            input.radio(type="radio" name="type" value="user")
+                                            label User
+
+                            .field.is-horizontal
+                                .field-label
+                                    label.label Birth Date
+                                .field-body
+                                    .field
+                                        p.control
+                                            input.input.is-primary(type="date" name="bday" min="1905-01-01")
+                            
+                            .field.is-horizontal
+                                .field-label
+                                
+                                .field-body
+                                    input.button.is-primary.is-outlined.is-pulled-center(type="submit" value="Sign Up")
+                                
+                .block                
+                    p.is-small
+                        a(href='/login') <i><font size="2"><center>Have an account? <strong>Login</strong></i></font>
+               
+                    </center>            
+
+
+
+
+    .block
+        .section
+            center
+                footer
+                    br
+                    p It's friggin' 2:30 am and I'm still at this shit. I swear on my grave, I'm gon' go drinkin' beer after this.
+                

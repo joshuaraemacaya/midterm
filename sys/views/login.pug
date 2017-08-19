@@ -1,0 +1,58 @@
+extends ../template/base
+
+
+
+
+block body
+
+
+    section.hero.is-primary.is-bold.is-fullheight
+        .hero-body
+            //- if hasIncorrect || hasUnauthorized
+            //-     .notification.is-danger
+            //-         | #{hasIncorrect || hasUnauthorized}
+            .container
+                .columns
+                    .column
+                        h1.title.is-1 <strong><center>Fo-Room</strong>
+                        h3.subtitle <center><font size = '3'>A Forum based webpage<font>
+                        hr
+                        h3.subtitle <center><font size = '5'>Here. Where your views matter.</font>
+
+                    .column.is-5
+                        .box
+                            form(method="POST" action="/login")
+                                .field
+                                    .field-label
+                                        label.label Have an account?
+
+                                .field.is-horizontal
+                                    .field-label.is-normal
+                                        label.label E-mail
+                                    .field-body
+                                        .field
+                                            p.control.is-expanded
+                                                input.input.is-primary(type="email" name="email" placeholder="Email")
+                                
+                                .field.is-horizontal
+                                    .field-label.is-normal
+                                        label.label Password
+                                    .field-body
+
+                                        .field
+                                            p.control.is-expanded
+                                                input.input.is-primary(type="password" name="password" placeholder="Password")
+                                .fields
+                                        input.button.is-primary.is-pulled-right.is-outlined.is-bold(type="submit" value="Log in")
+                                
+                                .field.is-horizontal
+                                        .field-label.is-normal
+                                                label.label
+                                        .field-body
+                                
+                        .field
+                               a(href='/signup') <i><font size="2">New to Fo-Room?<strong> Sign up<strong></i></font>
+                                
+
+
+                        
